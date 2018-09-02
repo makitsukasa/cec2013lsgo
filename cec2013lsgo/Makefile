@@ -18,12 +18,12 @@ demo2:  $(OBJECTS2) demo2.o
 
 demo.o: demo.cpp Header.h  Benchmarks.h \
 F1.h F2.h F3.h F4.h F5.h F6.h F7.h F8.h F9.h F10.h\
-F11.h F12.h F13.h F14.h F15.h 
-	$(CC) $(CXXFLAGS) -c demo.cpp 
+F11.h F12.h F13.h F14.h F15.h
+	$(CC) $(CXXFLAGS) -c demo.cpp
 
 eval_func.o:  eval_func.h Benchmarks.h \
 F1.h F2.h F3.h F4.h F5.h F6.h F7.h F8.h F9.h F10.h\
-F11.h F12.h F13.h F14.h F15.h 
+F11.h F12.h F13.h F14.h F15.h
 	$(CC) $(CXXFLAGS) -c eval_func.cpp
 
 demo2.o: demo2.cpp

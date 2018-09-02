@@ -16,16 +16,16 @@ int main(){
 
   vector<double> runTimeVec;
   struct timeval start, end;
-  long seconds, useconds;    
+  long seconds, useconds;
   double mtime;
-        
+
   X = new double[dim];
   for (unsigned i=0; i<dim; i++){
     X[i]=0;
   }
 
   for (unsigned i=0; i<funNum; i++){
-    fp = generateFuncObj(funToRun[i]); 
+    fp = generateFuncObj(funToRun[i]);
     fp->nextRun();
     printf("F %d value = %1.20E\n", fp->getID(), fp->compute(X));
     gettimeofday(&start, NULL);
@@ -33,7 +33,7 @@ int main(){
       fp->compute(X);
     }
     gettimeofday(&end, NULL);
-    
+
     seconds  = end.tv_sec  - start.tv_sec;
     useconds = end.tv_usec - start.tv_usec;
 
@@ -41,7 +41,7 @@ int main(){
 
     runTimeVec.push_back(mtime);
     printf ( "F %d, Running Time = %f s\n\n", fp->getID(), mtime);
-    
+
     delete fp;
   }
 

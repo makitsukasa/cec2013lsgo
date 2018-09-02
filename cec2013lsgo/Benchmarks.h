@@ -68,7 +68,7 @@ public:
   /* double elliptic_new(double*x,int dim); */
   /* double elliptic(double*x, int dim, int k); */
   double rastrigin(double*x,int dim);
-  double rastrigin(double *x, int dim, int k); 
+  double rastrigin(double *x, int dim, int k);
   double ackley(double*x,int dim);
   double ackley(double*x,int dim, int k);
   /* double rot_elliptic(double*x,int dim); */
@@ -84,7 +84,7 @@ public:
   double rosenbrock(double*x,int dim);
   double rosenbrock(double*x,int dim, int k);
   unsigned convertMatrixToArrayIndex ( unsigned i, unsigned j );
-  void createIndexMapping (  ); 
+  void createIndexMapping (  );
   /* void extractElemByPerm(); */
   double* rotateVector(int i, int &c);
   double* rotateVectorConform(int i, int &c);
@@ -128,7 +128,7 @@ public:
   double** r100;
   int* s;
   double* w;
-  
+
 // Added input file
   string data_dir;
 
@@ -138,7 +138,7 @@ public:
   virtual ~Benchmarks();
   virtual double compute(double* x){return 0;};
   virtual double compute(vector<double> x){return 0;};
-	
+
   int getMinX();
   int getMaxX();
   unsigned getID();
@@ -151,7 +151,7 @@ public:
   vector<bool> getInterArray (  );
   void ArrToMat ( unsigned I1, unsigned I2, unsigned &matIndex );
   void MatToArr ( unsigned &I1, unsigned &I2, unsigned matIndex );
-        
+
   /* for CEC2013SS */
   double* readOvector();
   double** readOvectorVec();
@@ -159,7 +159,7 @@ public:
   double** readR(int sub_dim);
   int* readS(int num);
   double* readW(int num);
-  
+
   void transform_osz(double* z, int dim);
   void transform_asy(double* z, double beta, int dim);
   void Lambda(double* z, double alpha, int dim);
@@ -167,7 +167,7 @@ public:
   double hat(double x);
   double c1(double x);
   double c2(double x);
-  
+
 };
 
 #endif
