@@ -11,7 +11,7 @@ void set_func(int funcID) {
 }
 
 void set_dimension(int dim){
-  bench->setDimension(dim);
+    bench->setDimension(dim);
 }
 
 void next_run() {
