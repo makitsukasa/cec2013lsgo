@@ -10,6 +10,10 @@ void set_func(int funcID) {
     bench->nextRun();
 }
 
+void set_dimension(int dim){
+  bench->setDimension(dim);
+}
+
 void next_run() {
     bench->nextRun();
 }
