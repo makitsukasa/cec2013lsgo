@@ -16,7 +16,7 @@ F4::~F4(){
  	delete[] Ovector;
  	delete[] Pvector;
         delete[] anotherz;
-        
+
         for (int i = 0; i < 25; ++i)
           {
             delete[] r25[i];
@@ -49,7 +49,7 @@ double F4::compute(double*x){
     s = readS(s_size);
     w = readW(s_size);
   }
-  
+
   for(i = 0; i < dimension; i++) {
     anotherz[i] = x[i] - Ovector[i];
   }
@@ -62,7 +62,7 @@ double F4::compute(double*x){
 
   // // T_{osz}
   // transform_osz(anotherz);
-  
+
   // s_size non-separable part with rotation
   int c = 0;
   for (i = 0; i < s_size; i++)
@@ -74,17 +74,17 @@ double F4::compute(double*x){
       delete []anotherz1;
       // cout<<result<<endl;
     }
-  
+
   // one separable part without rotation
-  double* z = new double[dimension-c];
+  double* z = new double[1000-c];
   for (i = c; i < dimension; i++)
     {
       // cout<<i-c<<" "<<Pvector[i]<<" "<<anotherz[Pvector[i]]<<endl;
       z[i-c] = anotherz[Pvector[i]];
     }
-  
+
   // cout<<"sep\n"<<elliptic(z, dimension-c)<<endl;
-  
+
   result += elliptic(z, dimension-c);
   delete[] z;
 
@@ -118,7 +118,7 @@ double F4::compute(double*x){
 // /*
 // 	  Pvector = (int*)malloc(sizeof(int) * dimension);
 // 	  for (i = 0; i<dimension; i++){
-// 		  Pvector[i] = i;	
+// 		  Pvector[i] = i;
 // 	  }
 // */
 //     RotMatrix = createRotMatrix1D(nonSeparableGroupSize);

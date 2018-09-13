@@ -16,7 +16,7 @@ F5::~F5(){
   delete[] Ovector;
   delete[] Pvector;
           delete[] anotherz;
-        
+
         for (int i = 0; i < 25; ++i)
           {
             delete[] r25[i];
@@ -54,11 +54,11 @@ double F5::compute(double*x){
   for(i = 0; i < dimension; i++) {
     anotherz[i] = x[i] - Ovector[i];
   }
-  
+
   // put them inside rastrigin function
   // // T_{osz}
   // transform_osz(anotherz, dimension);
-  
+
   // // T_{asy}^{0.2}
   // transform_asy(anotherz, 0.2);
 
@@ -78,26 +78,26 @@ double F5::compute(double*x){
     }
 
   // one separable part without rotation
-  double* z = new double[dimension-c];
+  double* z = new double[1000-c];
   for (i = c; i < dimension; i++)
     {
       // cout<<i-c<<" "<<Pvector[i]<<" "<<anotherz[Pvector[i]]<<endl;
       z[i-c] = anotherz[Pvector[i]];
     }
-  
+
   // cout<<"sep"<<endl;
   // cout<<rastrigin(z, dimension-c)<<endl;
-  
+
   result += rastrigin(z, dimension-c);
   // free(z);
-  
+
   delete[] z;
 
   update(result);
   return(result);
 }
 
-// double F5::compute(vector<double> x){ 
+// double F5::compute(vector<double> x){
 //   int    i;
 //   double result = 0.0;
 
@@ -109,7 +109,7 @@ double F5::compute(double*x){
 // /*
 // 		Pvector = new int[dimension];
 // 		for (int i=0; i<dimension; i++){
-// 			Pvector[i] = i; 
+// 			Pvector[i] = i;
 // 		}
 // 		*/
 //   }

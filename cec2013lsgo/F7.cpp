@@ -64,15 +64,15 @@ double F7::compute(double*x){
       delete []anotherz1;
       // cout<<result<<endl;
     }
-  
+
   // one separable part without rotation
-  double* z = new double[dimension-c];
+  double* z = new double[1000-c];
   for (i = c; i < dimension; i++)
     {
       // cout<<i-c<<" "<<Pvector[i]<<" "<<anotherz[Pvector[i]]<<endl;
       z[i-c] = anotherz[Pvector[i]];
     }
-  
+
   result += sphere(z, dimension-c);
   delete []z;
 

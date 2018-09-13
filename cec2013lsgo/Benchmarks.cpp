@@ -296,7 +296,7 @@ int* Benchmarks::createPermVector(int dim){
 int* Benchmarks::readPermVector(){
   int* d;
 
-  d = new int[dimension];
+  d = new int[1000];
 
   stringstream ss;
   ss<< data_dir <<"/" << "F" << ID << "-p.txt";

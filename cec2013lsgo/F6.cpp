@@ -14,7 +14,7 @@ F6::~F6(){
   delete[] Ovector;
   delete[] Pvector;
         delete[] anotherz;
-        
+
         for (int i = 0; i < 25; ++i)
           {
             delete[] r25[i];
@@ -54,7 +54,7 @@ double F6::compute(double*x){
   }
 
   // cout<<"non"<<endl;
-  
+
   // s_size non-separable part with rotation
   int c = 0;
   for (i = 0; i < s_size; i++)
@@ -66,9 +66,9 @@ double F6::compute(double*x){
       delete []anotherz1;
       // cout<<result<<endl;
     }
-  
+
   // one separable part without rotation
-  double* z = new double[dimension-c];
+  double* z = new double[1000-c];
   for (i = c; i < dimension; i++)
     {
       // cout<<i-c<<" "<<Pvector[i]<<" "<<anotherz[Pvector[i]]<<endl;
