@@ -43,4 +43,4 @@ SET(SRC
 ADD_LIBRARY(cec2013 SHARED ${CECSRC})
 TARGET_LINK_LIBRARIES(cec2013)
 
-set(CMAKE_CXX_FLAGS "-std=c++17 -pedantic")
+set(CMAKE_CXX_FLAGS "-std=c++17 -O3 -pedantic")
