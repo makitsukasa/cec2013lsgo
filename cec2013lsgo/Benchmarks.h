@@ -136,8 +136,8 @@ public:
   Benchmarks();
   void set_data_dir(string new_data_dir);
   virtual ~Benchmarks();
-  virtual double compute(double* x){return 0;};
-  virtual double compute(vector<double> x){return 0;};
+  virtual double compute(double*){return 0;};
+  virtual double compute(vector<double>){return 0;};
 
   int getMinX();
   int getMaxX();
